@@ -1,0 +1,156 @@
+html  {
+    background-color: rgb(253, 241, 251);
+
+/*
+    background-image: url("images/jumbotron.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;*/
+}
+
+#container{
+    background-color:#FDD59A;
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    height: 90%;
+    box-shadow: 10px 10px 5px rgb(39, 39, 39); /*shadow*/
+}
+
+#navbarContainer{
+    background-color:#FFFEEB;
+    overflow: hidden; /*all items fit into the navbarContainer*/
+    margin: 0%;
+}
+
+#navbar{
+    list-style-type: none;
+    padding: 1%;
+}
+
+@media screen and (max-width: 904px) {/*window smaller than 904px*/
+    #navbarLogo{
+        padding-top: 10%;
+        padding-left: 10%;
+    }
+
+    #shoppingCartLogoA{
+        float: right;
+        padding-right: 10%;
+        padding-top: 15%;
+    }
+
+    #hamburgerMenuA{
+        padding-right: 2%;
+        padding-top: 15%;
+        float: right;
+        outline: none !important;  /*no border around button after clicking*/
+        background-color: inherit; /*no color*/
+        border: none;
+    }
+    
+    /*SMARTPHONE*/
+    @media screen and (max-width: 380px) {/*window smaller than 380px*/
+        #shoppingCartLogoA{
+            float: right;
+            padding-right: 10%;
+            padding-top: 20%;
+        }
+    
+        #hamburgerMenuA{
+            padding-right: 2%;
+            padding-top: 20%;
+            float: right;
+            outline: none !important;  /*no border around button after clicking*/
+            background-color: inherit; /*no color*/
+            border: none;
+        }
+    }
+
+    .NavbarA {
+        display: block;
+        color: black;
+        text-align: center;
+        padding: 5px;
+        text-decoration: none;
+        font-size: 15px;
+    }
+      
+    li a:hover:not(.active) {
+        background-color: rgb(255, 230, 252);
+        transform: scale(1.1);
+    }
+    
+    .navbarHide{
+        height:0px; /*hide links*/
+        visibility: hidden;
+    }
+
+    .navbarShow{
+        height: auto; /*hide links*/
+    }
+}
+
+@media screen and (min-width: 904px){ /*from 904px and bigger*/
+    
+    #navbarContainer{
+        display: grid;
+        grid-template-areas: "logo hamburger nav bag";
+        grid-template-columns: 1fr;
+        align-items: end;
+    }
+
+    #navbarLogo{
+        padding-top: 2%;
+        padding-left: 2%;
+        padding-bottom: 2%;
+        margin-left: 5%;
+        grid-area: logo;
+    }
+
+    #hamburgerMenuA{
+        visibility: hidden;
+    }
+
+    #navbar{
+        grid-area: nav;
+        display: grid;
+        margin-right: 6%;
+        grid-template-areas: "home about shop contact login";
+    }
+
+    #shoppingCartLogoA{
+        grid-area: bag;
+        margin-right: 50%;
+        margin-bottom: 10%;
+        margin-left: 4%;
+    }
+
+    #loginLi{
+        margin-left: 60%; /*space between contat and login*/
+    }
+
+    .NavbarA {
+        color: black;
+        text-justify: center;
+        padding: 10px;
+        text-decoration: none;
+        font-size: 20px;
+    }
+
+    #loginA{
+        color: black;
+        background-color: rgb(255, 230, 252);
+        border-radius: 10%;
+        border:1px solid #C9AFBC;
+    }
+
+      
+    li a:hover:not(.active) {
+        background-color: rgb(255, 230, 252);
+        border-radius: 10%;
+    }
+
+
+}

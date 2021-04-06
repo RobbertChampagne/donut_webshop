@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="indexStyle.css" >
+    <link rel="stylesheet" type="text/css" href="styleNavbars.css" >
+    <script type="text/javascript" src="navbarScript.js"></script>
+
+    <title>Donuts Shop</title>
+</head>
+<body>
+    
+    <div id="container">
+        
+        <div id="navbarContainer">
+            <?php include "navbar.php"; ?>
+        </div>
+
+        <h1>test</h1>
+
+
+        <?php include "socialmedianavbar.php"; ?>
+
+          
+    </div>
+
+</body>
+</html>
