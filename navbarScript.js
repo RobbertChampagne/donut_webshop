@@ -16,11 +16,6 @@ function loaded(){
                 navbar.setAttribute("class", "navbarHide");
             }
         }
-
         
-    }else{
-
     }
-
-    
 }
