@@ -1,0 +1,54 @@
+@media screen and (max-width: 700px) {/*window smaller than 700px*/
+    
+    #articleContainer{
+        display: flex;
+        margin: 5%;
+        align-items: center;
+        flex-direction: column;
+    }
+    
+    .article{
+        border:1px solid #C9AFBC;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin-bottom: 10%;
+    }
+
+    .articleLinkTitleA{
+        color: #FB72BC;   /*EEB8EE*/
+        margin-top: 1%;
+        text-decoration: none;
+        font-size: large;
+    }
+
+    
+}
+
+@media screen and (min-width: 700px){ /*from 700px and bigger*/
+
+    #articleContainer{
+        display: flex;
+        margin: 5%;
+        justify-content: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    .article{
+        border:1px solid #C9AFBC;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin: 2%;
+        
+    }
+
+    .articleLinkTitleA{
+        color: #FB72BC;   /*EEB8EE*/
+        margin: 1%;
+        text-decoration: none;
+        font-size: large;
+    }
+
+}

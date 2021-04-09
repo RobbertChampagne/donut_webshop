@@ -34,7 +34,7 @@
     }
 }
 
-@media screen and (min-width: 414px){ /*from 904px and bigger*/
+@media screen and (min-width: 414px){ /*from 414px and bigger*/
     
     #imgTitleDivContainer{
         display: flex;

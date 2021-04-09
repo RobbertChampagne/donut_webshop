@@ -36,15 +36,22 @@ html  {
 }
 
 #socialmediaNavbar{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    justify-items: center;
+    display: flex;
+    text-align: center;
+}
+
+.socialmediaNavbarLi{
+    flex-grow: 1;
 }
 
 #socialmediaNavbarLiFacebook{
-    grid-column-start: 4;
-    grid-column-end: 5;
+    margin-left: 20%;
 }
+
+#socialmediaNavbarLiYoutube{
+    margin-right: 20%;
+}
+
 
 @media screen and (max-width: 904px) {/*window smaller than 904px*/
     #navbarLogo{

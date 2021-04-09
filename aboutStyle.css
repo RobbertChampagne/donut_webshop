@@ -1,0 +1,62 @@
+@media screen and (max-width: 700px) {/*window smaller than 700px*/
+    
+    .imgTitleDivContainer{
+        display: flex;
+        margin-top: 5%;
+        align-items: center;
+        margin-bottom: 5%;
+        flex-direction: column;
+    }
+    
+    #imgTitleDivContainerSecond{ /*so two images are not under each other*/
+        flex-direction: column-reverse;
+    }
+    
+
+    #titleDivContainer{
+        border:1px solid #C9AFBC;
+        width: 90%;
+        padding: 2%;
+    }
+
+    .aboutTitleH3{
+        color: #FB72BC;   /*EEB8EE*/
+        text-align: center;
+        padding: 1%;
+    }
+
+    #aboutImg{
+        border:5px solid #C9AFBC;
+    }
+}
+
+@media screen and (min-width: 700px){ /*from 700px and bigger*/
+
+    .imgTitleDivContainer{
+        display: flex;
+        margin: 5%;
+        align-items: flex-start;
+    }
+
+    #titleDivContainer{
+        border:1px solid #C9AFBC;
+        width: 90%;
+        padding: 2%;
+        align-self: center;
+    }
+
+    .aboutTitleH3{
+        color: #FB72BC;   /*EEB8EE*/
+        text-align: center;
+        padding: 1%;
+    }
+
+    #aboutImg{
+        border:5px solid #C9AFBC;
+        align-self: center;
+    }
+
+    #emptySpace{
+        width: 10%;
+    }
+}

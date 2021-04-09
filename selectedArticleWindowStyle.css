@@ -1,0 +1,114 @@
+@media screen and (max-width: 700px) {/*window smaller than 700px*/
+    
+    #articleContainer{
+        display: flex;
+        margin: 5%;
+        align-items: center;
+        flex-direction: row;
+    }
+    
+    #article{
+        border:1px solid #C9AFBC;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        margin-bottom: 10%;
+    }
+
+    #articleImg{
+        width: 100%;
+    }
+
+    #articleLinkTitleH3{
+        color: #FB72BC;   /*EEB8EE*/
+        margin-bottom: 1%;
+        text-decoration: none;
+        padding-left: 2%;
+        font-size: large;
+    }
+
+    #articlePriceH4, #textP{
+        padding-left: 2%;
+    }
+
+    #subtract{
+        margin-bottom: 5%;
+        margin-left: 5%;
+    }
+
+    #addToCart{
+        margin-left: 5%;
+        margin-bottom: 5%;
+    }
+
+    #amount{
+        width: 20px;
+    }
+
+    input::-webkit-outer-spin-button, /*to hide the arrows next to number input bar*/
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+
+    
+}
+
+@media screen and (min-width: 700px){ /*from 700px and bigger*/
+
+    #articleContainer{
+        display: flex;
+        margin: 5%;
+        justify-content: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    #article{
+        border:1px solid #C9AFBC;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        margin: 2%;
+    }
+
+    #articleImg{
+        margin-left: 2%;
+        margin-top: 2%;
+    }
+
+    #articleLinkTitleH3{
+        color: #FB72BC;   /*EEB8EE*/
+        margin-bottom: 1%;
+        text-decoration: none;
+        padding-left: 2%;
+        font-size: large;
+    }
+
+    #articlePriceH4, #textP{
+        padding-left: 2%;
+    }
+
+    #form{
+        margin-left: 2%;
+    }
+
+    #subtract{
+        margin-bottom: 2%;
+    }
+
+    #addToCart{
+        margin-bottom: 5%;
+    }
+
+    #amount{
+        width: 20px;
+    }
+
+    input::-webkit-outer-spin-button, /*to hide the arrows next to number input bar*/
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+}
