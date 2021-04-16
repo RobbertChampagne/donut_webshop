@@ -1,0 +1,48 @@
+/*@media screen and (max-width: 700px) {/*window smaller than 700px*/
+    
+    #loginRegisterTopContainer{
+        display: flex;
+        margin: 2%;
+        align-items: center;
+        flex-direction: column;
+    }
+    
+    .title{
+        font-size: large;
+        color: #FB72BC;   /*EEB8EE*/
+        text-align: center;
+    }
+
+    .loginOrRegisterContainer{
+        border:1px solid #C9AFBC;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        margin-bottom: 10%;
+        width: 93%;
+        margin-left: 1%;
+        padding: 2%;
+    }
+
+    h5,h3{
+        margin-bottom: 0%;
+    }
+
+    .loginregisterbuttons{
+        color: black;
+        background-color: rgb(255, 230, 252);
+        border-radius: 10%;
+        border:1px solid #C9AFBC;
+    }
+
+
+
+@media screen and (min-width: 700px){ /*from 700px and bigger*/
+
+    .loginOrRegisterContainer{
+        align-items: center;
+        width: max-content;
+        margin-bottom: 2%;
+    }
+
+}

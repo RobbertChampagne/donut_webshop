@@ -1,4 +1,17 @@
+.indexTitleH2{
+    color: #FB72BC;   /*EEB8EE*/
+    text-align: center;
+    padding: 1%;
+}
 
+.pictoContainerDiv{
+    text-align: center;
+    margin-bottom: 10%;
+}
+
+.pictograms:hover{
+    transform: scale(1.2);
+}
 
 @media screen and (max-width: 414px) {/*window smaller than 414px*/
     
@@ -14,24 +27,10 @@
         width: 80%;
     }
 
-    .indexTitleH2{
-        color: #FB72BC;   /*EEB8EE*/
-        text-align: center;
-        padding: 1%;
-    }
-
     #indexImg{
         border:5px solid #C9AFBC;
     }
     
-    .pictoContainerDiv{
-        text-align: center;
-        margin-bottom: 10%;
-    }
-    
-    .pictograms:hover{
-        transform: scale(1.2);
-    }
 }
 
 @media screen and (min-width: 414px){ /*from 414px and bigger*/
@@ -49,12 +48,6 @@
         align-self: center;
     }
     
-    .indexTitleH2{
-        color: #FB72BC;   /*EEB8EE*/
-        text-align: center;
-        padding: 1%;
-    }
-    
     #indexImg{
         margin-right: 5%;
         flex-grow: 1;
@@ -63,15 +56,6 @@
     
     #emptySpace{
         width: 20%;
-    }
-    
-    .pictoContainerDiv{
-        text-align: center;
-        margin-bottom: 10%;
-    }
-    
-    .pictograms:hover{
-        transform: scale(1.2);
     }
 
 }

@@ -1,0 +1,83 @@
+table,th,td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+th,td {
+  padding: 5px;
+}
+
+th {
+  text-align: left;
+}
+
+#accountContainer {
+  display: flex;
+  margin: 5%;
+  align-items: center;
+  flex-direction: column;
+}
+
+.titleH3 {
+  color: #fb72bc; /*EEB8EE*/
+  text-align: left;
+}
+
+#accountDetailsContainer, #orderContainer{
+  border: 1px solid #c9afbc;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-bottom: 5%;
+  width: 93%;
+  margin-left: 1%;
+  padding: 2%;
+}
+
+#accountButton, #logoutButton {
+  color: black;
+  background-color: rgb(255, 230, 252);
+  border-radius: 10%;
+  border: 1px solid #c9afbc;
+}
+
+#deleteAccountButton{
+    color: white;
+    background-color: rgb(255, 110, 110);
+    border-radius: 10%;
+    margin-top: 2%;
+    border: 1px solid red;
+}
+
+#accountActionsContainer{
+    border: 1px solid #c9afbc;
+    margin-bottom: 5%;
+    width: 93%;
+    margin-left: 1%;
+    padding: 2%;
+}
+
+#accountActionsForm{ /*so button can float to the right*/
+    width: 100%;
+}
+
+#deleteAccountButton{
+    float: right;
+    margin-top: 0%;
+}
+
+#logoutButton{
+    float: left;
+}
+
+
+
+
+@media screen and (min-width: 700px) {/*from 700px and bigger*/
+
+    #accountDetailsContainer, #orderContainer,#accountActionsContainer  {
+        width: 50%;
+        margin-bottom: 2%;
+    }
+
+}

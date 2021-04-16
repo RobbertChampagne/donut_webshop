@@ -21,6 +21,7 @@
         <div id="articleContainer">
 
             <div id="article">
+                
                 <img id="articleImg" src="images/blackdonut.jpg" width="250px" alt="">
                 <h3 id="articleLinkTitleH3">Lorem ipsum dolor</h3>
                 <h4 id="articlePriceH4" >€4,99</h4>
@@ -34,9 +35,8 @@
                     <input id="addToCart" type="submit" value="ADD TO CART">
                 </form>
 
-
             </div>
-
+            
         </div>
 
         <div id="socialmediaNavbarContainer">

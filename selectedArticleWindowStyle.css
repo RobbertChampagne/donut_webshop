@@ -1,3 +1,42 @@
+#articleLinkTitleH3{
+    color: #FB72BC;   /*EEB8EE*/
+    margin-bottom: 1%;
+    text-decoration: none;
+    padding-left: 2%;
+    font-size: large;
+}
+
+#articlePriceH4, #textP{
+    padding-left: 2%;
+}
+
+#add{
+    color: black;
+    background-color: rgb(255, 230, 252);
+    border-radius: 10%;
+    border:1px solid #C9AFBC;
+}
+
+#addToCart{
+    margin-bottom: 5%;
+    margin-left: 5%;
+    color: black;
+    background-color: rgb(255, 230, 252);
+    border-radius: 10%;
+    border:1px solid #C9AFBC;
+}
+
+#amount{
+    width: 20px;
+}
+
+input::-webkit-outer-spin-button, /*to hide the arrows next to number input bar*/
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
 @media screen and (max-width: 700px) {/*window smaller than 700px*/
     
     #articleContainer{
@@ -19,40 +58,15 @@
         width: 100%;
     }
 
-    #articleLinkTitleH3{
-        color: #FB72BC;   /*EEB8EE*/
-        margin-bottom: 1%;
-        text-decoration: none;
-        padding-left: 2%;
-        font-size: large;
-    }
-
-    #articlePriceH4, #textP{
-        padding-left: 2%;
-    }
-
     #subtract{
         margin-bottom: 5%;
         margin-left: 5%;
+        color: black;
+        background-color: rgb(255, 230, 252);
+        border-radius: 10%;
+        border:1px solid #C9AFBC;
     }
 
-    #addToCart{
-        margin-left: 5%;
-        margin-bottom: 5%;
-    }
-
-    #amount{
-        width: 20px;
-    }
-
-    input::-webkit-outer-spin-button, /*to hide the arrows next to number input bar*/
-    input::-webkit-inner-spin-button {
-        -webkit-appearance: none;
-        margin: 0;
-    }
-
-
-    
 }
 
 @media screen and (min-width: 700px){ /*from 700px and bigger*/
@@ -78,37 +92,20 @@
         margin-top: 2%;
     }
 
-    #articleLinkTitleH3{
-        color: #FB72BC;   /*EEB8EE*/
-        margin-bottom: 1%;
-        text-decoration: none;
-        padding-left: 2%;
-        font-size: large;
-    }
-
-    #articlePriceH4, #textP{
-        padding-left: 2%;
-    }
-
     #form{
         margin-left: 2%;
     }
 
     #subtract{
         margin-bottom: 2%;
+        color: black;
+        background-color: rgb(255, 230, 252);
+        border-radius: 10%;
+        border:1px solid #C9AFBC;
     }
 
     #addToCart{
-        margin-bottom: 5%;
+        margin-left: 0%;
     }
-
-    #amount{
-        width: 20px;
-    }
-
-    input::-webkit-outer-spin-button, /*to hide the arrows next to number input bar*/
-    input::-webkit-inner-spin-button {
-        -webkit-appearance: none;
-        margin: 0;
-    }
+    
 }
