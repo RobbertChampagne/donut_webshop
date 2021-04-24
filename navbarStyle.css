@@ -167,7 +167,7 @@ html  {
 
 }
 
-@media screen and (min-width: 819px) {/*window bigger than 750px*/
+@media screen and (min-width: 874px) {/*window bigger than 874px*/
 
     #hamburgerMenuA{
         visibility: hidden;

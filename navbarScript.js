@@ -2,7 +2,7 @@ window.addEventListener("load", loaded);
 
 function loaded() {
 
-  if (window.innerWidth < 750) {
+  if (window.innerWidth < 874) {
 
     document.getElementById("hamburgerMenuA").addEventListener("click", showOrHideDropdownMenu);
 

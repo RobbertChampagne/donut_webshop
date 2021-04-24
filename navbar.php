@@ -9,5 +9,5 @@
     <li id="shopLi" class="NavbarLi"><a id="shopA" class="NavbarA" href="shop.php">SHOP</a></li>
     <li id="contactLi" class="NavbarLi"><a id="contactA" class="NavbarA" href="contact.php">CONTACT</a></li>
 
-    <li id="loginLi" class="NavbarRightLogin NavbarLi"><a id="loginA" class="NavbarA" href="loginOrRegister.php">LOGIN</a></li>
+    <li id="loginLi" class="NavbarRightLogin NavbarLi"> <?php if(isset($_SESSION['name'])) : ?> <a id="loginA" class="NavbarA" href="account.php">ACCOUNT</a> <?php else: ?> <a id="loginA" class="NavbarA" href="loginOrRegister.php">LOGIN</a> <?php endif ?> </li>
 </ul>

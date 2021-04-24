@@ -23,7 +23,7 @@ th {
   text-align: left;
 }
 
-#accountDetailsContainer, #orderContainer{
+.accountDetailsContainer, #orderContainer{
   border: 1px solid #c9afbc;
   display: flex;
   align-items: flex-start;
@@ -34,7 +34,7 @@ th {
   padding: 2%;
 }
 
-#accountButton, #logoutButton {
+.accountButton, #logoutButton {
   color: black;
   background-color: rgb(255, 230, 252);
   border-radius: 10%;
@@ -68,6 +68,9 @@ th {
 
 #logoutButton{
     float: left;
+    text-decoration: none;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 
@@ -75,9 +78,9 @@ th {
 
 @media screen and (min-width: 700px) {/*from 700px and bigger*/
 
-    #accountDetailsContainer, #orderContainer,#accountActionsContainer  {
+    .accountDetailsContainer, #orderContainer,#accountActionsContainer  {
         width: 50%;
-        margin-bottom: 2%;
+        margin-bottom: 2px;
     }
 
 }

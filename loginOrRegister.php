@@ -1,3 +1,5 @@
+<?php include('server.php') ?> <!--include PHP page-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,19 +23,22 @@
 
             <h4 class="title">Login / Register</h4>
             
+            <?php include('error.php'); ?> <!--include errors page (shows errors)-->
+
+
             <div class="loginOrRegisterContainer">
                 <h3 class="title">Login</h3>
 
-                <form action="register.php" method="post">
-
-                    <h5>Username</h5>
-                    <input name="name" class="loginregisterinputs" type="text" id="emailinput" placeholder="Enter your username" required >
+                <form action="loginOrRegister.php" method="post"  >
+                    
+                    <h5>Email</h5>
+                    <input name="email" class="loginregisterinputs" type="text" id="emailinput" placeholder="Enter your email"  required >
 
                     <h5>Password</h5>
-                    <input name="password" class="loginregisterinputs" type="text" id="passwordinput" placeholder="Enter your password" required  >
+                    <input name="password" class="loginregisterinputs" type="password" id="passwordinput" placeholder="Enter your password" autocomplete="new-password" required  >
                     
                     <br><br>
-                    <button type="submit" value="register" class="loginregisterbuttons" name="loginbutton">Login</button>
+                    <button type="submit"  class="loginregisterbuttons" name="loginbutton">Login</button>
 
                 </form>
             </div>
@@ -41,22 +46,22 @@
             <div class="loginOrRegisterContainer">
                 <h3 class="title">Register</h3>
 
-                <form action="register.php" method="post">
+                <form action="loginOrRegister.php" method="post">
 
                     <h5>Username</h5>
-                    <input name="name" class="loginregisterinputs" type="text" id="usernameinput" placeholder="Enter your username" required >
+                    <input name="name" class="loginregisterinputs" type="text" id="usernameinput" placeholder="Enter your username"  required >
                     
                     <h5>Email</h5>
                     <input name= "email" class="loginregisterinputs" type="email" id="emailinput" placeholder="Enter your email" required >
                     
                     <h5>Password</h5>
-                    <input name= "password" class="loginregisterinputs" type="text" id="passwordinput" placeholder="Enter your password" required >
+                    <input name= "password" class="loginregisterinputs" type="password" id="passwordinput" placeholder="Enter your password" autocomplete="new-password" required >
 
                     <h5>Password (repeat)</h5>
-                    <input name= "passwordrepeat" class="loginregisterinputs" type="text" id="passwordinput" placeholder="Enter your password" required >
+                    <input name= "passwordrepeat" class="loginregisterinputs" type="password" id="passwordinput" placeholder="Enter your password" required >
                     
                     <br><br>
-                    <button type="submit" value="register" class="loginregisterbuttons" name="registerbutton">Register</button>
+                    <button type="submit" class="loginregisterbuttons" name="registerbutton">Register</button>
                     
                 </form>
             </div>
