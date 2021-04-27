@@ -1,6 +1,9 @@
 <?php
 
     session_start();
+    
+    //get so this page knows what article was clicked
+    $article = $_GET["article"];
 
 ?>
 
@@ -29,9 +32,9 @@
             <div id="article">
                 
                 <img id="articleImg" src="images/blackdonut.jpg" width="250px" alt="">
-                <h3 id="articleLinkTitleH3">Lorem ipsum dolor</h3>
-                <h4 id="articlePriceH4" >€4,99</h4>
-                <p id="textP">Nam cursus id arcu at maximus. Cras dapibus tempor nibh, nec suscipit metus tincidunt in. Vestibulum tincidunt mi ut eleifend hendrerit.</p>
+                <h3 id="articleLinkTitleH3"><?php echo $article ?> Donut</h3>
+                <h4 id="articlePriceH4"></h4>
+                <p id="textP"></p>
 
                 <form id="form" action="">
                     <input id="subtract" type="button" value="-">
