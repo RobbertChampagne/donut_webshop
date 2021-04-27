@@ -1,9 +1,12 @@
-table,th,td {
+table,
+th,
+td {
   border: 1px solid black;
   border-collapse: collapse;
 }
 
-th,td {
+th,
+td {
   padding: 5px;
 }
 
@@ -23,7 +26,8 @@ th {
   text-align: left;
 }
 
-.accountDetailsContainer, #orderContainer{
+.accountDetailsContainer,
+#orderContainer {
   border: 1px solid #c9afbc;
   display: flex;
   align-items: flex-start;
@@ -34,53 +38,184 @@ th {
   padding: 2%;
 }
 
-.accountButton, #logoutButton {
+.accountButton,
+#logoutButton {
   color: black;
   background-color: rgb(255, 230, 252);
   border-radius: 10%;
   border: 1px solid #c9afbc;
 }
 
-#deleteAccountButton{
-    color: white;
-    background-color: rgb(255, 110, 110);
-    border-radius: 10%;
-    margin-top: 2%;
-    border: 1px solid red;
+#deleteAccountButton {
+  color: white;
+  background-color: rgb(255, 110, 110);
+  border-radius: 10%;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-top: 2px;
+  text-decoration: none;
+  border: 1px solid red;
 }
 
-#accountActionsContainer{
-    border: 1px solid #c9afbc;
-    margin-bottom: 5%;
-    width: 93%;
-    margin-left: 1%;
-    padding: 2%;
+#accountActionsContainer {
+  border: 1px solid #c9afbc;
+  margin-bottom: 5%;
+  width: 93%;
+  margin-left: 1%;
+  padding: 2%;
 }
 
-#accountActionsForm{ /*so button can float to the right*/
-    width: 100%;
+#accountActionsForm {
+  /*so button can float to the right*/
+  width: 100%;
 }
 
-#deleteAccountButton{
-    float: right;
+#deleteAccountButton {
+  float: right;
+  margin-top: 0%;
+}
+
+#logoutButton {
+  float: left;
+  text-decoration: none;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+@media screen and (min-width: 700px) {
+  /*from 700px and bigger*/
+
+  .accountDetailsContainer,
+  #orderContainer,
+  #accountActionsContainer {
+    width: 50%;
+    margin-bottom: 2px;
+  }
+}
+
+
+
+
+
+
+
+/*DELETE ACCOUNT PAGE*/
+#deleteAccountBody {
+  background-color: #f7e4ea;
+}
+
+.titlesDeletePage {
+  color: #fb72bc;
+  margin-top: 10%;
+  text-align: center;
+}
+
+#deleteImg {
+  margin-top: 5%;
+  width: 100%;
+}
+
+#backButton {
+  background-color: rgba(20, 161, 20, 0.856);
+  margin-top: 10%;
+  padding: 2%;
+  border: 1px solid green;
+  width: 100%;
+  font-size:large;
+}
+
+#backButtonA{
+  color: white;
+  text-decoration: none;
+}
+
+#deleteButton {
+  color: white;
+  background-color: rgb(255, 110, 110);
+  margin-top: 10%;
+  border: 1px solid red;
+  font-size:large;
+  padding: 1%;
+  width: 100%;
+}
+
+
+@media screen and (min-width: 510px) {
+  /*from 510px and bigger*/
+
+  #deleteAccountActionsForm {
+    margin-top: 5%;
+  }
+
+  .titlesDeletePage {
+    text-align: center;
+    margin: 1%;
+  }
+
+  #deleteImg {
+    width: 60%;
     margin-top: 0%;
+    margin-left: 20%;
+  }
+
+  #backButton {
+    padding: 2%;
+    margin-left: 20%;
+    margin-top: 1%;
+    width: 60%;
+  }
+
+  #deleteButton {
+    margin-top: 0%;
+    padding: 1%;
+    width: 60%;
+    margin-left: 20%;
+  }
 }
 
-#logoutButton{
-    float: left;
-    text-decoration: none;
-    padding-left: 5px;
-    padding-right: 5px;
+@media screen and (min-width: 770px) {
+  /*from 510px and bigger*/
+
+  #deleteImg {
+    width: 40%;
+    margin-top: 0%;
+    margin-left: 30%;
+  }
+
+  #backButton {
+    padding: 1%;
+    margin-left: 30%;
+    margin-top: 1%;
+    width: 40%;
+  }
+
+  #deleteButton {
+    padding: 1%;
+    margin-top: 2%;
+    width: 40%;
+    margin-left: 30%;
+  }
 }
 
+@media screen and (min-width: 1000px) {
+  /*from 1000px and bigger*/
 
+  #deleteImg {
+    width: 30%;
+    margin-left: 35%;
+  }
 
+  #backButton {
+    padding: 1%;
+    margin-left: 35%;
+    margin-top: 1%;
+    width: 30%;
+  }
 
-@media screen and (min-width: 700px) {/*from 700px and bigger*/
-
-    .accountDetailsContainer, #orderContainer,#accountActionsContainer  {
-        width: 50%;
-        margin-bottom: 2px;
-    }
-
+  #deleteButton {
+    margin-top: 0%;
+    padding: 1%;
+    width: 30%;
+    margin-left: 35%;
+  }
 }

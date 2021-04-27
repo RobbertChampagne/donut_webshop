@@ -25,6 +25,7 @@ if($connection->connect_errno) //when there is no connection
 
 //SAVE ACCOUNT DETAILS
 if (isset($_POST['saveChangesButton'])) {
+
     //FORM VALIDATION
     $name = filter_var($_POST['name'], FILTER_SANITIZE_SPECIAL_CHARS); //This filter is used to escape "<>& and characters with ASCII value below 32
     $email = filter_var($_POST['email'], FILTER_SANITIZE_SPECIAL_CHARS); 
@@ -54,7 +55,6 @@ if (isset($_POST['saveChangesButton'])) {
         $result->bind_param("sssss", $name, $email, $creditcardnumber, $address, $session_email ); //add type to var
         $result->execute(); //uses query on DB  
         $result->store_result(); //save result
-
         $_SESSION['name'] = $name;
         $_SESSION['email'] = $email;
         $result->close();
@@ -75,8 +75,8 @@ if (isset($_POST['saveChangesButton'])) {
             $_SESSION['address'] = $address;
         }
     }
-
     $result->close();
+
 }
 
 
@@ -87,11 +87,32 @@ if (isset($_POST['savePasswordChangesButton'])) {
     $password2 = filter_var($_POST['passwordrepeat'], FILTER_SANITIZE_SPECIAL_CHARS);
     
     //IS EMPTY? 
-    if(empty($name)) {array_push($errors, "Username is required!");}
-    if(empty($email)) {array_push($errors, "Email is required!");}
     if(empty($password)) {array_push($errors, "Password is required!");}
     if($password != $password2) {array_push($errors, "Passwords need to be the same!");}
+    
+    //CONFIG USER PASSWORD IF NO ERROR
+    if(count($errors) == 0){ 
+        $password = md5($password); //encrypt password
 
+        $query = "UPDATE customer_profile SET password=? WHERE email=?";
+        $result = $connection->prepare($query); //prepares query
+        $result->bind_param("ss", $password, $session_email ); //add type to var
+        $result->execute(); //uses query on DB  
+        $result->store_result(); //save result
+        $result->close();
+    }
 }
+
+//DELETE ACCOUNT
+if(!empty($_POST['deleteButton'])){
+    $query = "DELETE FROM customer_profile WHERE email=?";
+    $result = $connection->prepare($query); //prepares query
+    $result->bind_param("s", $session_email); //add type to var
+    $result->execute(); //uses query on DB  
+    $result->store_result(); //save result
+    $result->close();
+    header("location: loginOrRegister.php");
+}
+
 
 ?>

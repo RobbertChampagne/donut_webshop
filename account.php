@@ -52,10 +52,10 @@
 
             <div id="accountActionsContainer">
 
-                <form id="accountActionsForm" action="post">
+                <div id="accountActionsForm">
                     <a id="logoutButton" class="accountActionButtons" href="account.php?logout='1'">Logout</a>
-                    <button type="submit" value="deleteAccount" id="deleteAccountButton" class="accountActionButtons" name="deleteButton">Delete Account</button>
-                </form>
+                    <a href="deleteAccount.php" id="deleteAccountButton" class="accountActionButtons">Delete Account</a>
+                </div>
 
             </div>
             
@@ -88,10 +88,10 @@
                     <input name= "email" class="accountInputs" type="email" id="emailinput" value= <?php echo $_SESSION['email'] ?>   >
                     
                     <h5>Credit Card Number</h5>
-                    <input name= "creditcardnumber" class="accountInputs" type="text" id="creditCardNumberinput" <?php if(isset($_SESSION['creditcardnumber']) || $_SESSION['creditcardnumber'] != "" ) : ?>  value= <?php echo $_SESSION['creditcardnumber'] ?> <?php else: ?> placeholder="Enter your credit card nr." <?php endif; ?> >
+                    <input name= "creditcardnumber" class="accountInputs" type="text" id="creditCardNumberinput" <?php if($_SESSION['creditcardnumber'] != NULL || $_SESSION['creditcardnumber'] != "" ) : ?>  value= <?php echo $_SESSION['creditcardnumber'] ?> <?php else: ?> placeholder="Enter your credit card nr." <?php endif; ?> >
                     
                     <h5>Address</h5>
-                    <input name= "address" class="accountInputs" type="text" id="addressinput" <?php if(isset($_SESSION['address'])  || $_SESSION['address'] != "" ) : ?>  value= <?php echo $_SESSION['address'] ?> <?php else: ?> placeholder="Enter your address" <?php endif; ?>  >
+                    <input name= "address" class="accountInputs" type="text" id="addressinput" <?php if($_SESSION['address'] != NULL  || $_SESSION['address'] != "" ) : ?>  value= <?php echo $_SESSION['address'] ?> <?php else: ?> placeholder="Enter your address" <?php endif; ?>  >
 
                     <br><br>
                     <input  type="submit" value="Save Changes" class="accountButton" name="saveChangesButton">
