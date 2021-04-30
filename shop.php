@@ -2,6 +2,7 @@
 
     session_start();
 
+    
 ?>
 
 <!DOCTYPE html>
@@ -26,26 +27,26 @@
         <div id="articleContainer">
 
             <div class="article">
-                <a href="selectedArticleWindow.php"><img class="articleImg" src="images/blackdonut.jpg" width="250px" alt=""></a>
-                <a class="articleLinkTitleA" href="selectedArticleWindow.php">Lorem ipsum dolor</a>
+                <a href="selectedArticleWindow.php?article=Chocolate"><img class="articleImg" src="images/blackdonut.jpg" width="250px" alt=""></a>
+                <a class="articleLinkTitleA" href="selectedArticleWindow.php?article=Chocolate">Chocolate Donut</a>
                 <h4 class="articlePriceH4" >€4,99</h4>
             </div>
 
             <div class="article">
-                <a href="selectedArticleWindow.php"><img class="articleImg" src="images/pinkdonut1.jpg" width="250px" alt=""></a>
-                <a class="articleLinkTitleA" href="selectedArticleWindow.php">Lorem ipsum dolor</a>
+                <a href="selectedArticleWindow.php?article=Pink"><img class="articleImg" src="images/pinkdonut1.jpg" width="250px" alt=""></a>
+                <a class="articleLinkTitleA" href="selectedArticleWindow.php?article=Pink">Pink Donut</a>
                 <h4 class="articlePriceH4">€3,99</h4>
             </div>
 
             <div class="article">
-                <a  href="selectedArticleWindow.php"><img class="articleImg" src="images/pinkblue.jpg" width="250px" alt=""></a>
-                <a class="articleLinkTitleA" href="selectedArticleWindow.php">Lorem ipsum dolor</a>
+                <a  href="selectedArticleWindow.php?article=Blue And Pink"><img class="articleImg" src="images/pinkblue.jpg" width="250px" alt=""></a>
+                <a class="articleLinkTitleA" href="selectedArticleWindow.php?article=Blue And Pink">Blue And Pink Donut</a>
                 <h4 class="articlePriceH4">€4,99</h4>
             </div>
 
             <div class="article">
-                <a  href="selectedArticleWindow.php"><img class="articleImg" src="images/heart1.jpg" width="250px" alt=""></a>
-                <a class="articleLinkTitleA" href="selectedArticleWindow.php">Lorem ipsum dolor</a>
+                <a  href="selectedArticleWindow.php?article=Heart"><img class="articleImg" src="images/heart1.jpg" width="250px" alt=""></a>
+                <a class="articleLinkTitleA" href="selectedArticleWindow.php?article=Heart">Heart Donut</a>
                 <h4 class="articlePriceH4">€3,99</h4>
             </div>
 
