@@ -1,5 +1,7 @@
 <?php
-    session_start();
+    include 'selectedArticleWindowServer.php';
+
+    //session_start();
 ?>
 
 <!DOCTYPE html>
@@ -37,59 +39,10 @@
                         <?php 
 
                             if(isset($_SESSION['cart'])){
-                                
-                                                                             
-
+                                                                                                   
                                 $doc = new DOMDocument; //creating base to write on                                                                                             
 
-                                foreach( $_SESSION['cart'] as $article){          
-                                  
-                                    //create 'tr'
-                                    $trNode = $doc->createElement('tr');
-                                    $trNode->setAttribute('class', 'trShoppingCartTable');
-                                    $doc->appendChild($trNode);
-
-                                    for ($x = 0; $x <= 5; $x++){
-
-                                        if($x == 3){
-                                            //create and append 'td' + add '-' button
-                                            $tdNode = $doc->createElement('td');
-                                            $tdNode->setAttribute('class', 'tdShoppingCartTable');
-                                            $trNode->appendChild($tdNode);
-                                            $buttonNode = $doc->createElement('button', '-');
-                                            $buttonNode->setAttribute('class', 'minusButtonShoppingCartTable');
-                                            $tdNode->appendChild($buttonNode);
-
-                                        }elseif($x == 4){
-                                            //create and append 'td' + add '+' button
-                                            $tdNode = $doc->createElement('td');
-                                            $tdNode->setAttribute('class', 'tdShoppingCartTable');
-                                            $trNode->appendChild($tdNode);
-                                            $buttonNode = $doc->createElement('button', '+');
-                                            $buttonNode->setAttribute('class', 'addButtonShoppingCartTable');
-                                            $tdNode->appendChild($buttonNode);
-
-                                        }elseif($x == 5){
-                                            //create and append 'td' + add 'x' button
-                                            $tdNode = $doc->createElement('td');
-                                            $tdNode->setAttribute('class', 'tdShoppingCartTable');
-                                            $trNode->appendChild($tdNode);
-                                            $buttonNode = $doc->createElement('button', 'x');
-                                            $buttonNode->setAttribute('class', 'deleteButtonShoppingCartTable');
-                                            $tdNode->appendChild($buttonNode);
-
-                                        }else{
-                                            //create and append 'td'
-                                            $tdNode = $doc->createElement('td', $article[$x]);
-                                            $tdNode->setAttribute('class', 'tdShoppingCartTable');
-                                            $trNode->appendChild($tdNode);
-                                        }
-                    
-                                    }      
-
-                                    echo $doc->saveXML();   
-                                    
-                                }
+                                echo($_SESSION['cart'][1]->getAmount());
                             }
                         
                         ?>
