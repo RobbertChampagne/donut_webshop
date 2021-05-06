@@ -5,6 +5,7 @@
     //get so this page knows what article was clicked
     $article = $_GET["article"];
 
+
 ?>
 
 <!DOCTYPE html>
@@ -32,16 +33,21 @@
             <div id="article">
                 
                 <img id="articleImg" src="images/blackdonut.jpg" width="250px" alt="">
-                <h3 id="articleLinkTitleH3"><?php echo $article ?> Donut</h3>
+                <h3 id="articleLinkTitleH3"><?php echo $article ?></h3>
                 <h4 id="articlePriceH4"></h4>
                 <p id="textP"></p>
 
-                <form id="form" action="">
+                <form id="form" action="selectedArticleWindowServer.php" method="POST">
                     <input id="subtract" type="button" value="-">
-                    <input id="amount" type="number">
+                    <input id="amount" name="amount" type="number">
                     <input id="add" type="button" value="+">
+                    
+                    <input name="typeOfDonut" type="hidden" value=<?php echo $article ?>>
+                    <input name="price" id="price" type="hidden">
+                    
                     <br>
-                    <input id="addToCart" type="submit" value="ADD TO CART">
+                    <input id="addToCart" type="submit" name="addToCart" value="ADD TO CART">
+                    <p id="addedToCartMessage"></p>
                 </form>
 
             </div>

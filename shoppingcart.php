@@ -1,7 +1,7 @@
 <?php
     include 'selectedArticleWindowServer.php';
 
-    //session_start();
+    //session_start(); //starts in included file
 ?>
 
 <!DOCTYPE html>
@@ -12,6 +12,8 @@
     <link rel="stylesheet" type="text/css" href="shoppingcartStyle.css" >
     <link rel="stylesheet" type="text/css" href="navbarStyle.css" >
     <script type="text/javascript" src="navbarScript.js"></script>
+    <script type="text/javascript" src="shoppingCartScript.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 
     <title>Shoppingcart</title>
 </head>
@@ -36,24 +38,14 @@
                             <th>PRICE</th>
                         </tr>
 
-                        <?php 
 
-                            if(isset($_SESSION['cart'])){
-                                                                                                   
-                                $doc = new DOMDocument; //creating base to write on                                                                                             
-
-                                echo($_SESSION['cart'][1]->getAmount());
-                            }
-                        
-                        ?>
-                    
                     </table>
 
             </div>
 
             <div id="checkoutContainer">
 
-                <h4 id="subtotalH4">Subtotal ...</h4>
+                <h4 id="subtotalH4">Subtotal </h4>
 
                 <form id="checkoutForm" action="">
                     <button type="submit" value="checkout" id="checkoutButton" name="checkoutButton">CHECKOUT</button>
