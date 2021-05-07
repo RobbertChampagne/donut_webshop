@@ -32,13 +32,11 @@
                     <h3 class="titleH3">SHOPPING CART</h3>
 
                     <table id="productTable">
-                        <tr>
+                        <!--<tr>
                             <th>PRODUCT</th>
                             <th>QTY</th>
                             <th>PRICE</th>
-                        </tr>
-
-
+                        </tr>-->
                     </table>
 
             </div>

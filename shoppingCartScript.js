@@ -3,7 +3,37 @@ window.addEventListener("load", loaded);
 function loaded() {
 
     window.articles = []; //ARTICLE OBJECTS INSIDE SHOPPING CART
+    
 
+    //ADJUSTMENT SHOPPING CART
+    ajaxCallStartOnLoad();
+    
+    function updateArticlesListInPhp(){
+        //UPDATE OBJECT INSIDE PHP AFTER MINUS, ADD, REMOVE
+
+        let articlesToSendToPhp = JSON.stringify(articles);
+
+        let xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+
+                //RELOAD SCREEN
+                let table = document.getElementById("productTable");
+
+                while(table.firstChild){
+                    table.removeChild(table.firstChild);
+                }
+
+                articles = [];
+                defineSubtotal(articles);
+                ajaxCallStartOnLoad();
+
+            }
+        };
+       
+        xmlhttp.open("GET", "shoppingcartServer.php?articlesAdjustment=" + articlesToSendToPhp, true);
+        xmlhttp.send();
+    }
 
     function minus(event){
         let clickedArticleName = event.target.name;
@@ -14,28 +44,68 @@ function loaded() {
             }
         }
 
-        createTable(articles);
-        defineSubtotal(articles);
-
-        //UPDATE OBJECT INSIDE PHP
         
+        //UPDATE OBJECT INSIDE PHP AFTER MINUS, ADD, REMOVE
+        updateArticlesListInPhp();
 
     }
     
     function add(event){
         let clickedArticleName = event.target.name;
+
+        for (let article of articles){
+            if(article.name === clickedArticleName){
+                article.amount++;
+            }
+        }
         
+        
+
+        //UPDATE OBJECT INSIDE PHP AFTER MINUS, ADD, REMOVE
+        updateArticlesListInPhp();
+
     }
     
     function remove(event){
         let clickedArticleName = event.target.name;
+
+        for (let article of articles){
+            if(article.name === clickedArticleName){
+                article.amount = 0;
+            }
+        }
         
+       
+
+        //UPDATE OBJECT INSIDE PHP AFTER MINUS, ADD, REMOVE
+        updateArticlesListInPhp();
     }
     
     function createTable(articles){
 
         let table = document.getElementById("productTable");
 
+        //TABLE HEADERS
+        let tr = document.createElement("tr");
+
+        for (i = 0; i < 3; i++) {
+            let th = document.createElement("th");
+
+            if (i === 0) {
+                th.textContent = "PRODUCT";
+            } else if (i === 1) {
+                th.textContent ="QTY";
+            } else {
+                th.textContent = "PRICE";
+            }
+
+            tr.appendChild(th);
+
+        }
+
+        table.appendChild(tr);
+
+        //TABLE ARTICLES
         for (let article of articles){
 
             let tr = document.createElement("tr");
@@ -83,7 +153,6 @@ function loaded() {
 
     }
 
-
     function defineSubtotal(articles){
         
         let total = 0;
@@ -94,10 +163,8 @@ function loaded() {
 
         total = Math.round(total * 100) / 100;
 
-        let subtotalText = document.getElementById("subtotalH4").textContent;
-        document.getElementById("subtotalH4").textContent = subtotalText + total + '€';
+        document.getElementById("subtotalH4").textContent = "Subtotal " + total + '€';
     }
-
 
     //objectsJson == [{"name":"Chocolate","amount":2,"price":4.99},{"name":"Pink","amount":9,"price":3.99},..]
     function defineArticleObjects(objectsJson){
@@ -112,17 +179,17 @@ function loaded() {
         defineSubtotal(articles);
     }
 
-
-    let xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            let objectsJson = JSON.parse(this.responseText);
-            defineArticleObjects(objectsJson);
-        }
-    };
-   
-    xmlhttp.open("GET", "shoppingcartServer.php", true);
-    xmlhttp.send();
-
+    function ajaxCallStartOnLoad(){
+        let xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                let objectsJson = JSON.parse(this.responseText);
+                defineArticleObjects(objectsJson);
+            }
+        };
+    
+        xmlhttp.open("GET", "shoppingcartServer.php", true);
+        xmlhttp.send();
+    }
 
 }
