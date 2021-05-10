@@ -2,6 +2,7 @@
     include 'selectedArticleWindowServer.php';
    
     $articles = $_SESSION['cart'];
+    $customerId = $_SESSION['customerId'];
 
     //AJAX REQUEST FROM shoppingCartScript.js TO UPDATE OBJECTS IN PHP AFTER MINUS,ADD,REMOVE            
     if (isset($_REQUEST['articlesAdjustment'])) {
@@ -36,16 +37,47 @@
     echo $articlesToBeShown; 
 
 
-    //WHEN CHECKOUT BUTTON IS PRESSED -> CREATE ORDER -> SAVE IN DB -> SHOW ORDERS IN ACCOUNT PAGE
+    //WHEN CHECKOUT BUTTON IS PRESSED -> CREATE ORDER -> SAVE IN DB TO SHOW ORDERS IN ACCOUNT PAGE
     if (isset($_POST['checkoutButton'])) {
-        
+
+        //CONNECT TO DB
+        $dbPassword = "robbertadmin";
+        $dbUserName = "admin_robbert";
+        $dbServer = "localhost";
+        $dbName = "donutwebshop";
+
+        $connection = mysqli_connect($dbServer, $dbUserName, $dbPassword, $dbName);
+
+        if($connection->connect_errno) //when there is no connection 
+        {
+            exit("Connection DB failed. Reason: ".$connection->connect_error);
+        }
+
+        //UPDATE ORDERS TABLE
         foreach($articles as $article){
 
             if($article->getAmount() > 0){
-    
-                       
+
+                $date = DATE('now');
+                $articleName = $article->getName();
+                $articleAmount = $article->getAmount();
+
+                $query = "INSERT INTO orders (customer_id, date, product_name, amount) VALUES (?,?,?,?)";
+                $result = $connection->prepare($query); //prepares query
+                $result->bind_param("ssss", $customerId, $date, $articleName, $articleAmount); //add type to var
+                $result->execute(); //uses query on DB  
+                $result->store_result(); //save result
+                $result->close();     
             }
         } 
+
+        //EMPTY $articles = $_SESSION['cart'] 
+        foreach($articles as $article){
+
+            $article->resetAmount();
+               
+        } 
+
     }
     
 

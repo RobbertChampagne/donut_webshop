@@ -45,7 +45,7 @@
 
                 <h4 id="subtotalH4">Subtotal </h4>
 
-                <form id="checkoutForm" action="">
+                <form id="checkoutForm" action="shoppingcartServer.php" method="POST">
                     <button type="submit" value="checkout" id="checkoutButton" name="checkoutButton">CHECKOUT</button>
                 </form>
 

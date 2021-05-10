@@ -16,6 +16,10 @@
         function addAmount($count){
             $this->amount += $count; 
         }
+        
+        function resetAmount(){
+            $this->amount = 0; 
+        }
 
         function getAmount(){
             return $this->amount;

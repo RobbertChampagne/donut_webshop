@@ -68,6 +68,19 @@ if (isset($_POST['registerbutton'])) {
 
         $_SESSION['name'] = $name;
         $_SESSION['email'] = $email;
+        $_SESSION['creditcardnumber'] = "";
+        $_SESSION['address'] = "";
+
+        //GET USERID TO FIND ORDERS (ACCOUNTPAGE)
+        $get_customerid_query = "SELECT * FROM customer_profile WHERE email = ?"; 
+        $result = $connection->prepare($get_customerid_query); //prepares query on db
+        $result->bind_param("s", $email ); //add type to var
+        $result->execute(); //uses query on DB
+        $result->bind_result($customerId); //save output query in variable
+        $result->store_result(); //save result
+
+        $_SESSION['customerId'] = $customerId;
+
         header('location: account.php');
     }
 }
@@ -87,11 +100,11 @@ if(isset($_POST['loginbutton'])){
     if(count($errors) == 0) {
 
         $password = md5($password);
-        $query = "SELECT name FROM customer_profile WHERE email = ? AND password= ? ";
+        $query = "SELECT * FROM customer_profile WHERE email = ? AND password= ? ";
         $result = $connection->prepare($query); //prepares query
         $result->bind_param("ss", $email, $password ); //add type to var
         $result->execute(); //uses query on DB
-        $result->bind_result($loginName); //save output query in variable
+        $result->bind_result($customerId, $loginName, $passwd, $mail, $creditcardnumber, $address); //save output query in variable
         $result->store_result(); //save result
 
 
@@ -99,6 +112,9 @@ if(isset($_POST['loginbutton'])){
             while($result->fetch()){
                 $_SESSION['email'] = $email;
                 $_SESSION['name'] = $loginName;
+                $_SESSION['creditcardnumber'] = $creditcardnumber;
+                $_SESSION['address'] = $address;
+                $_SESSION['customerId'] = $customerId;
                 header("location: account.php");
             }
         }else{
