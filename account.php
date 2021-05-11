@@ -70,7 +70,7 @@
                         <th>ID</th>
                         <th>DATE</th>
                         <th>PRODUCT NAME</th>
-                        <th>AMOUNT</th>
+                        <th>QTY</th>
                     </tr>-->
                 </table>
 

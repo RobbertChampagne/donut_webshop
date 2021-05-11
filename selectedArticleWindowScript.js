@@ -47,7 +47,19 @@ function loaded(){
 
     //SHOW ADDED TO CART MESSAGE AFTER CLICKING ADD TO CART
     document.getElementById("addToCart").addEventListener("click", function(){
-        document.getElementById("addedToCartMessage").textContent = "Article was added to cart.";
+
+        //to chech if logged in
+        let loggedInYet = document.getElementById("loginLi").value;
+        
+        if( loggedInYet === "account"){
+
+            document.getElementById("addedToCartMessage").textContent = "Article was added to cart.";
+
+        }else{
+
+            document.getElementById("addedToCartMessage").textContent = "You need to be logged in if you want to add to cart.";
+
+        }
     });
 
     

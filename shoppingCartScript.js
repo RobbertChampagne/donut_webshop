@@ -93,10 +93,13 @@ function loaded() {
 
             if (i === 0) {
                 th.textContent = "PRODUCT";
+                th.setAttribute("class", "columnTitel");
             } else if (i === 1) {
                 th.textContent ="QTY";
+                th.setAttribute("class", "columnTitel");
             } else {
                 th.textContent = "PRICE";
+                th.setAttribute("class", "columnTitel");
             }
 
             tr.appendChild(th);

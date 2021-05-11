@@ -53,14 +53,23 @@
     
     if (isset($_POST['addToCart'])) {
         
-        foreach($_SESSION['cart'] as $article){
-            if($article->getName() == $_POST['typeOfDonut']){
-                $article->addAmount($_POST['amount']);
+        if (isset($_SESSION['email'])) { //only able to add to cart when logged in..
+            foreach($_SESSION['cart'] as $article){
+                if($article->getName() == $_POST['typeOfDonut']){
+                    $article->addAmount($_POST['amount']);
+                }
             }
+            
+            sleep(1);
+            header("location: shop.php");
+
+        }else{
+            //when not logged in show message selectedArticleWindowScript.js
+            sleep(2);
+            header("location: loginOrRegister.php");
         }
+
         
-        sleep(1);
-        header("location: shop.php");
 
     }
 

@@ -21,7 +21,7 @@ function loaded() {
             } else if (i === 2) {
                 th.textContent = "PRODUCT NAME";
             } else{
-                th.textContent = "AMOUNT";
+                th.textContent = "QTY";
             }
 
             tr.appendChild(th);
