@@ -42,7 +42,7 @@
                     <input id="amount" name="amount" type="number">
                     <input id="add" type="button" value="+">
                     
-                    <input name="typeOfDonut" type="hidden" value=<?php echo $article ?>>
+                    <input name="typeOfDonut" type="hidden" value="<?php echo $article ?>">
                     <input name="price" id="price" type="hidden">
                     
                     <br>

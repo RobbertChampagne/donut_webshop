@@ -35,6 +35,7 @@
     <link rel="stylesheet" type="text/css" href="accountStyle.css" >
     <link rel="stylesheet" type="text/css" href="navbarStyle.css" >
     <script type="text/javascript" src="navbarScript.js"></script>
+    <script type="text/javascript" src="accountScript.js"></script>
 
     <title>Account</title>
 </head>
@@ -65,12 +66,12 @@
                 <h3 class="titleH3">Orders:</h3>
 
                 <table id="orderTable">
-                    <tr>
+                    <!--<tr>
                         <th>ID</th>
                         <th>DATE</th>
                         <th>PRODUCT NAME</th>
                         <th>AMOUNT</th>
-                    </tr>
+                    </tr>-->
                 </table>
 
             </div>

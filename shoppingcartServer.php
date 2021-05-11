@@ -57,8 +57,9 @@
         foreach($articles as $article){
 
             if($article->getAmount() > 0){
-
-                $date = DATE('now');
+                
+                $now = new DateTime();
+                $date = $now->format('d/m/Y');
                 $articleName = $article->getName();
                 $articleAmount = $article->getAmount();
 
@@ -77,6 +78,8 @@
             $article->resetAmount();
                
         } 
+
+        header("location: account.php");
 
     }
     

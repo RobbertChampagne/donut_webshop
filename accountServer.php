@@ -8,6 +8,7 @@ $session_email = $_SESSION['email'];
 $creditcardnumber = "";
 $address = "";
 $password = "";
+$customer_id = $_SESSION['customerId'];
 
 //CONNECT TO DB
 $dbPassword = "robbertadmin";
@@ -20,6 +21,30 @@ $connection = mysqli_connect($dbServer, $dbUserName, $dbPassword, $dbName);
 if($connection->connect_errno) //when there is no connection 
 {
     exit("Connection DB failed. Reason: ".$connection->connect_error);
+}
+
+//SHOW ORDERS
+$query = "SELECT * FROM orders WHERE customer_id = ?";
+$result = $connection->prepare($query); //prepares query
+$result->bind_param("s", $customer_id ); //add type to var
+$result->execute(); //uses query on DB
+$result->bind_result($orderId, $customer_id, $date, $product_name, $amount); //save output query in variable
+$result->store_result(); //save result
+
+$ordersToShow = array();
+
+if($result->num_rows > 0){
+    while($result->fetch()){
+        $order = [$orderId, $date, $product_name, $amount];
+        Array_push($ordersToShow, $order);
+    }
+}
+$result->close();
+
+//AJAX CALL FROM accountScript.js TO SHOW ORDERS IN TABLE
+if (isset($_POST['getOrders'])) {
+    $ordersToShow = json_encode($ordersToShow); //to json
+    echo $ordersToShow; 
 }
 
 
@@ -79,7 +104,7 @@ if (isset($_POST['saveChangesButton'])) {
 
 }
 
-
+//SAVE PASSWORD CHANGES
 if (isset($_POST['savePasswordChangesButton'])) {
 
     //FORM VALIDATION
