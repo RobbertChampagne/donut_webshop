@@ -10,19 +10,22 @@ html  {
     margin-top: 5%;
     margin-bottom: 5%;
     height: 90%;
-    box-shadow: 10px 10px 5px rgb(39, 39, 39); /*shadow*/
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    /*box-shadow: 10px 10px 5px rgb(39, 39, 39); /*shadow*/
 }
 
 /*NAVBARS*/
 #navbarContainer{
     background-color:#FFFEEB;
     overflow: hidden; /*all items fit into the navbarContainer*/
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border:1px solid #fffa9c;
 }
 
 #socialmediaNavbarContainer{
     background-color:#FFFEEB;
     overflow: hidden; /*all items fit into the navbarContainer*/
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border:1px solid #fffa9c;
 }
 
@@ -71,6 +74,7 @@ html  {
 .navbarShow{
     height: auto; /*hide links*/
 }
+
 
 /*POSITION NAVBAR*/
 
