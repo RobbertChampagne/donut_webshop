@@ -1,7 +1,6 @@
 <?php
     include('accountServer.php');
     
-    var_dump($_POST);
 
     //IF NOT LOGGED IN YET
     if(!isset($_SESSION['name'])){
