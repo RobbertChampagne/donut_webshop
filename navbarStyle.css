@@ -74,6 +74,13 @@ html  {
 
 /*POSITION NAVBAR*/
 
+@media screen and (max-width: 330px) {/*window smaller than 330px*/
+    
+    #navbarLogo{
+        width: 30%;
+    }
+}
+
 @media screen and (max-width: 500px) {/*window smaller than 500px*/
     
     #navbarLogo{

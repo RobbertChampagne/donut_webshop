@@ -63,7 +63,13 @@ th {
     width: 100%;
 }
 
-
+@media screen and (max-width: 330px) {/*window smaller than 330px*/
+  
+  #productContainer{
+    overflow-x: scroll;
+  }
+  
+}
 @media screen and (min-width: 700px) {/*from 700px and bigger*/
 
     #productContainer, #checkoutContainer {
